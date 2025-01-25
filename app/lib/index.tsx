@@ -1,16 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { ExampleTinyFrontendProps } from "../../contract/src/props";
 import { Button } from "./button";
 import styles from "./index.module.css";
 
-const ExampleTinyFrontend: React.FC<ExampleTinyFrontendProps> = ({
-  name,
-  onCounterChange,
-}) => {
+const ExampleTinyFrontend: React.FC<ExampleTinyFrontendProps> = ({ name }) => {
   const [value, setValue] = useState(0);
-
-  useEffect(() => onCounterChange?.(value), [value, onCounterChange]);
 
   return (
     <div className={styles.container}>
@@ -18,23 +13,7 @@ const ExampleTinyFrontend: React.FC<ExampleTinyFrontendProps> = ({
 
       <div className={styles.descriptionContainer}>
         <p>
-          I&apos;m a{" "}
-          <a
-            href="https://tiny-frontend.github.io"
-            target="_blank"
-            rel="noreferrer"
-          >
-            tiny frontend
-          </a>{" "}
-          🐰 , I was deployed from{" "}
-          <a
-            href="https://github.com/tiny-frontend/example-tiny-frontend"
-            target="_blank"
-            rel="noreferrer"
-          >
-            this git repository
-          </a>
-          . I&apos;m just a regular React component, but my implementation was
+          I&apos;m just a regular React component, but my implementation was
           loaded at runtime!
         </p>
         <p>
@@ -42,9 +21,7 @@ const ExampleTinyFrontend: React.FC<ExampleTinyFrontendProps> = ({
         </p>
       </div>
 
-      <Button onClick={() => setValue((value) => value + 1)}>
-        Press me Remix Europe!
-      </Button>
+      <Button onClick={() => setValue((value) => value + 1)}>Press me!</Button>
     </div>
   );
 };

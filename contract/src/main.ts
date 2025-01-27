@@ -16,4 +16,7 @@ export const loadExampleTinyFrontendClient = async (
     dependenciesMap: {
       react: React,
     },
+    loadingOptions: {
+      cacheTtlInMs: 0,
+    },
   });

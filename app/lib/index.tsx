@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { ExampleTinyFrontendProps } from "../../contract/src/props";
 import { Button } from "./button";
@@ -6,6 +6,16 @@ import styles from "./index.module.css";
 
 const ExampleTinyFrontend: React.FC<ExampleTinyFrontendProps> = ({ name }) => {
   const [value, setValue] = useState(0);
+
+  const handleClickButton = () => {
+    setValue(value + 1);
+  };
+
+  useEffect(() => {
+    window.dispatchEvent(
+      new CustomEvent("valueChange", { detail: { key: value } })
+    );
+  }, [value]);
 
   return (
     <div className={styles.container}>

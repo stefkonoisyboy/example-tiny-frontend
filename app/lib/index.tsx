@@ -24,7 +24,7 @@ const ExampleTinyFrontend: React.FC<ExampleTinyFrontendProps> = ({ name }) => {
       <div className={styles.descriptionContainer}>
         <p>
           I&apos;m just a regular React component, but my implementation was
-          loaded at runtimeeeeeeeee!!!
+          loaded at runtimeeeeeeeee
         </p>
         <p>
           You pressed my button <strong>{value} times</strong>!
